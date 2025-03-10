@@ -10,7 +10,7 @@ qux
 
 quux
 ```
-⬇️
+⬇️Markdown processor?
 ```html
 <blockquote>
 <p>[!NOTE]
@@ -29,7 +29,6 @@ baz
 qux</div>
 <p>quux</p>
 ```
-⬇️
 > [!NOTE]
 > foo
 > bar
