@@ -55,10 +55,10 @@ quux
 qux
 
 quux
-> [!NOTE]
 > foo
 > bar
 # H1
+> [!NOTE]
 > foo
 > bar
 # H1
@@ -84,10 +84,10 @@ quux
 qux
 
 quux
-> [!NOTE]
 > foo
 > bar
 # H1
+> [!NOTE]
 > foo
 > bar
 # H1
