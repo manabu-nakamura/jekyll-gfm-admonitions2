@@ -27,6 +27,7 @@ baz
 qux</div>
 <p>quux</p>
 ```
+⬇️
 > [!NOTE]
 > foo
 > bar
