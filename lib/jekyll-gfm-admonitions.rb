@@ -34,7 +34,7 @@ module JekyllGFMAdmonitions
         admonition_html(type, title, text, icon)
       end
       if content != original_content
-        css = File.read(File.expand_path('../assets/admonitions.css'))
+        css = File.read(File.expand_path('../assets/admonitions.css', __dir__))
         content = "<head><style>#{CSSminify.compress(css)}</style></head>" + content
       end
       content
