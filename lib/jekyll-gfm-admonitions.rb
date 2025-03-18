@@ -27,14 +27,14 @@ module JekyllGFMAdmonitions
     def convert(content)
       original_content = content.dup
       content.gsub!(/<blockquote>\s*<p>\s*\[!(IMPORTANT|NOTE|WARNING|TIP|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
-        type = ::Regexp.last_match(1).downcase
+        type  = ::Regexp.last_match(1).downcase
         title = ::Regexp.last_match(2).strip.empty? ? type.capitalize : ::Regexp.last_match(2).strip
-        text = ::Regexp.last_match(3)
-        icon = Octicons::Octicon.new(ADMONITION_ICONS[type]).to_svg
+        text  = ::Regexp.last_match(3)
+        icon  = Octicons::Octicon.new(ADMONITION_ICONS[type]).to_svg
         admonition_html(type, title, text, icon)
       end
       if content != original_content
-        css = File.read(File.expand_path('../assets/admonitions.css', __dir__))
+        css = File.read(File.expand_path('../assets/admonitions.css'))
         content = "<head><style>#{CSSminify.compress(css)}</style></head>" + content
       end
       content
