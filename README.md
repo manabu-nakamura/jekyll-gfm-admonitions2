@@ -112,4 +112,8 @@ quux
     > [!NOTE] My own title
     > Fancy!
 
+> [!NOTE]
+> > [!NOTE]
+> > foo bar
+
 [Manabu Nakamura](https://github.com/manabu-nakamura)
