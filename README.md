@@ -116,4 +116,8 @@ quux
 > > [!NOTE]
 > > foo bar
 
+> [!NOTE]
+> > [!NOTE]
+> > foo bar
+
 [Manabu Nakamura](https://github.com/manabu-nakamura)
