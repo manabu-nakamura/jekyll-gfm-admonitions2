@@ -117,6 +117,11 @@ quux
     > [!NOTE] My own title
     > Fancy!
 
+> [!NOTE] My own title
+> > [!NOTE]
+> > > [!NOTE]
+> > > foo
+
 > [!NOTE]
 > > [!NOTE]
 > > > [!NOTE]
