@@ -81,6 +81,11 @@ quux
 
     > [!NOTE] My own title
     > Fancy!
+
+> [!NOTE]
+> > [!NOTE]
+> > > [!NOTE]
+> > > foo
 ```
 ⬇️
 > foo
@@ -114,10 +119,7 @@ quux
 
 > [!NOTE]
 > > [!NOTE]
-> > foo bar
-
-> [!NOTE]
-> > [!NOTE]
-> > foo bar
+> > > [!NOTE]
+> > > foo
 
 [Manabu Nakamura](https://github.com/manabu-nakamura)
