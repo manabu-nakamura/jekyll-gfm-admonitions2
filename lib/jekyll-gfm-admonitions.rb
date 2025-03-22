@@ -28,9 +28,9 @@ module JekyllGFMAdmonitions
       original_content = content.dup
       content.gsub!(/<blockquote>\s*<p>\s*\[!(IMPORTANT|NOTE|WARNING|TIP|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
-        tmp   = ::Regexp.last_match(2).strip
-        title = (tmp.empty? || tmp == '</p>') ? type.capitalize : tmp
+        tmp   = ::Regexp.last_match(2).strip.gsub(/<\/p>$/, '')
         text  = ::Regexp.last_match(3)
+        title = tmp.empty? ? type.capitalize : tmp
         icon  = Octicons::Octicon.new(ADMONITION_ICONS[type]).to_svg
         admonition_html(type, title, text, icon)
       end
