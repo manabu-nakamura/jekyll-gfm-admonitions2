@@ -82,10 +82,22 @@ quux
     > [!NOTE] My own title
     > Fancy!
 
+> [!NOTE] My own title
+> > [!NOTE]
+> > foo
+
 > [!NOTE]
 > > [!NOTE]
-> > > [!NOTE]
-> > > foo
+> > foo
+
+> [!NOTE]
+> foo
+> > [!NOTE]
+> > bar
+
+> foo
+> > [!NOTE]
+> > bar
 ```
 ⬇️
 > foo
@@ -119,13 +131,11 @@ quux
 
 > [!NOTE] My own title
 > > [!NOTE]
-> > > [!NOTE]
-> > > foo
+> > foo
 
 > [!NOTE]
 > > [!NOTE]
-> > > [!NOTE]
-> > > foo
+> > foo
 
 > [!NOTE]
 > foo
