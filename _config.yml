@@ -10,7 +10,7 @@ description: >-
 #  options: ["UNSAFE", "SMART", "FOOTNOTES"]
 #  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
 plugins:
-- jekyll-gfm-admonitions
+#- jekyll-gfm-admonitions
 - jekyll-optional-front-matter
 
 exclude: 
