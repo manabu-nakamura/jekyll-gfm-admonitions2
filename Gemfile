@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
  
-gem 'jekyll'
+#gem 'jekyll'
 group :jekyll_plugins do
   gem 'jekyll-gfm-admonitions', path: '.'
 #  gem 'jekyll-optional-front-matter'
