@@ -4,7 +4,7 @@ repository: manabu-nakamura/jekyll-gfm-admonitions2
 description: >-
   A description of your project
 
-#markdown: GFM
+markdown: GFM
 #markdown: CommonMarkGhPages
 #commonmark:
 #  options: ["UNSAFE", "SMART", "FOOTNOTES"]
