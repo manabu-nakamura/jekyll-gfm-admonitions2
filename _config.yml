@@ -11,7 +11,7 @@ description: >-
 #  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
 plugins:
 - jekyll-gfm-admonitions
-- jekyll-optional-front-matter
+#- jekyll-optional-front-matter
 
 exclude: 
   - "**/*.ts" # Exclude source code files!
