@@ -3,6 +3,13 @@
 require 'octicons'
 require 'cssminify'
 
+ADMONITION_ja = {
+  'important' => '重要',
+  'note' => '注記',
+  'tip' => 'ヒント',
+  'warning' => '警告',
+  'caution' => '注意'
+}.freeze
 ADMONITION_ICONS = {
   'important' => 'report',
   'note' => 'info',
@@ -28,7 +35,8 @@ module JekyllGFMAdmonitions
       original_content = content.dup
       content.gsub!(/<blockquote>\s*<p>\s*\[!(IMPORTANT|NOTE|WARNING|TIP|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
-        title = (::Regexp.last_match(2).strip.empty? || ::Regexp.last_match(2).strip == '</p>') ? type.capitalize : ::Regexp.last_match(2).strip
+#        title = (::Regexp.last_match(2).strip.empty? || ::Regexp.last_match(2).strip == '</p>') ? type.capitalize : ::Regexp.last_match(2).strip
+        title = (::Regexp.last_match(2).strip.empty? || ::Regexp.last_match(2).strip == '</p>') ? ADMONITION_ja[type] : ::Regexp.last_match(2).strip
         text  = ::Regexp.last_match(3)
         icon  = Octicons::Octicon.new(ADMONITION_ICONS[type]).to_svg
         admonition_html(type, title, text, icon)
