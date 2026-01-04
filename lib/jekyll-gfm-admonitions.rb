@@ -5,7 +5,7 @@ require 'cssminify'
 
 ADMONITION_ja = {
   'important' => '重要',
-  'note' => '注記',
+  'note' => 'メモ',
   'tip' => 'ヒント',
   'warning' => '警告',
   'caution' => '注意'
