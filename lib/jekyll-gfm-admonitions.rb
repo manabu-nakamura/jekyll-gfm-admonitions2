@@ -34,7 +34,7 @@ module JekyllGFMAdmonitions
 
     def convert(content)
       original_content = content.dup
-      content.gsub!(/<blockquote>\s*<p>\s*\[!(IMPORTANT|NOTE|WARNING|TIP|CAUTION)\]\s*(.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
+      content.gsub!(/<blockquote>\s*<p>\s*\[!(IMPORTANT|NOTE|WARNING|TIP|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
 #       title = (::Regexp.last_match(2).strip.empty? || ::Regexp.last_match(2).strip == '</p>') ? type.capitalize     : ::Regexp.last_match(2).strip
         title = (::Regexp.last_match(2).strip.empty? || ::Regexp.last_match(2).strip == '</p>') ? ADMONITION_ja[type] : ::Regexp.last_match(2).strip
