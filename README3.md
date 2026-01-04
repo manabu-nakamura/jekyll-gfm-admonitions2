@@ -55,7 +55,7 @@ To use admonitions in your markdown files, simply add the following syntax:
 > [!TIP]
 > Optional information to help a user be more successful.
 
-> [!IMPORTANT]   
+> [!IMPORTANT]  
 > Crucial information necessary for users to succeed.
 
   > [!WARNING]  
