@@ -34,7 +34,7 @@ qux</p>
 ```
 ⬇️GFMAdmonitionConverter
 ```html
-<div class='markdown-alert markdown-alert-note'><p class='markdown-alert-title'><svg class="octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="..."></path></svg> Note</p>foo
+<div class='markdown-alert markdown-alert-note'><p class='markdown-alert-title'><svg class="octicon octicon-info" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="..."></path></svg> メモ</p>foo
 bar
 baz
 qux</div>
