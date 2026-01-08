@@ -37,8 +37,8 @@ module JekyllGFMAdmonitions
       content.gsub!(/<blockquote>\s*<p>\s*\[!(IMPORTANT|NOTE|WARNING|TIP|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
         t     = ::Regexp.last_match(2)
-#       title = (t.empty? || t == '<br />' || t == '</p>') ? type.capitalize     : t
-        title = (t.empty? || t == '<br />' || t == '</p>') ? ADMONITION_ja[type] : t
+        title = (t.empty? || t == '<br />' || t == '</p>') ? type.capitalize     : t
+#       title = (t.empty? || t == '<br />' || t == '</p>') ? ADMONITION_ja[type] : t
         text  = ::Regexp.last_match(3)
         icon  = Octicons::Octicon.new(ADMONITION_ICONS[type]).to_svg
         admonition_html(type, title, text, icon)
