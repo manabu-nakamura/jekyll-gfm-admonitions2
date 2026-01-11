@@ -4,19 +4,19 @@ require 'octicons'
 require 'cssminify'
 
 ADMONITION_ja = {
+  'note'      => 'メモ',
+  'tip'       => 'ヒント',
   'important' => '重要',
-  'note' => 'メモ',
-  'tip' => 'ヒント',
-  'warning' => '警告',
-  'caution' => '注意'
+  'warning'   => '警告',
+  'caution'   => '注意'
 }.freeze
 
 ADMONITION_ICONS = {
+  'note'      => 'info',
+  'tip'       => 'light-bulb',
   'important' => 'report',
-  'note' => 'info',
-  'tip' => 'light-bulb',
-  'warning' => 'alert',
-  'caution' => 'stop'
+  'warning'   => 'alert',
+  'caution'   => 'stop'
 }.freeze
 
 module JekyllGFMAdmonitions
@@ -34,7 +34,7 @@ module JekyllGFMAdmonitions
 
     def convert(content)
       original_content = content.dup
-      content.gsub!(/<blockquote>\s*<p>\s*\[!(IMPORTANT|NOTE|WARNING|TIP|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
+      content.gsub!(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
         t     = ::Regexp.last_match(2)
 #       title = (t.empty? || t == '<br />' || t == '</p>') ? type.capitalize     : t
