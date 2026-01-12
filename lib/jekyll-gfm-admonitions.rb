@@ -34,7 +34,7 @@ module JekyllGFMAdmonitions
 
     def convert(content)
       original_content = content.dup
-      content.gsub(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
+      content.gsub!(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
         t     = ::Regexp.last_match(2)
 #       title = (t.empty? || t == '<br />' || t == '</p>') ? type.capitalize     : t
