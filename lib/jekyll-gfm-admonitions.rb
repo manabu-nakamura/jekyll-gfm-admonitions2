@@ -53,7 +53,7 @@ module JekyllGFMAdmonitions
     def admonition_html(type, title, text, icon)
       "<div class='markdown-alert markdown-alert-#{type}'>" \
         "<p class='markdown-alert-title'>#{icon} #{title}</p>" \
-        "#{text}" \
+        "<p>#{text}</p>" \
       "</div>"
     end
   end
