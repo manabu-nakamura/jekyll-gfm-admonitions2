@@ -53,6 +53,7 @@ module JekyllGFMAdmonitions
         text  = ::Regexp.last_match(3)
         icon  = Octicons::Octicon.new(ADMONITION_ICONS[type]).to_svg
         admonition_html(type, title, text, icon)
+        (defined?(site.active_lang)) ? site.active_lang : "en"
       end
       if content != original_content
         css = File.read(File.expand_path('../assets/admonitions.css', __dir__))
