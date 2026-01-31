@@ -11,7 +11,7 @@ ADMONITION = {
     'warning'   => 'Warning',
     'caution'   => 'Caution'
   }.freeze,
-  'ja' => {
+  "ja" => {
     'note'      => 'メモ',
     'tip'       => 'ヒント',
     'important' => '重要',
