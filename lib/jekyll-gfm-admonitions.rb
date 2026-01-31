@@ -51,8 +51,8 @@ module JekyllGFMAdmonitions
 
     def convert(content)
       original_content = content.dup
-      a = ADMONITION[defined? site.active_lang ? site.active_lang : 'en']
-      admonition = a == nil ? ADMONITION['en'] : a
+      admonition = ADMONITION[defined? site.active_lang ? site.active_lang : 'en']
+      admonition = admonition == nil ? ADMONITION['en'] : admonition
 #      admonition = ADMONITION['ja']
       content.gsub!(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
