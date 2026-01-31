@@ -4,14 +4,14 @@ require 'octicons'
 require 'cssminify'
 
 ADMONITION = {
-  'en' => {
+  "en" => {
     'note'      => 'Note',
     'tip'       => 'Tip',
     'important' => 'Important',
     'warning'   => 'Warning',
     'caution'   => 'Caution'
   }.freeze,
-  'ja' => {
+  "ja" => {
     'note'      => 'メモ',
     'tip'       => 'ヒント',
     'important' => '重要',
@@ -43,7 +43,7 @@ module JekyllGFMAdmonitions
 
     def convert(content)
       original_content = content.dup
-      admonition = ADMONITION[(defined? site.active_lang) ? site.active_lang : 'en']
+      admonition = ADMONITION[(defined? site.active_lang) ? site.active_lang : "en"]
 #      admonition = (admonition == nil) ? ADMONITION['en'] : admonition
       content.gsub!(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
