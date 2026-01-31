@@ -4,14 +4,14 @@ require 'octicons'
 require 'cssminify'
 
 ADMONITION = {
-  "en" => {
+  'en' => {
     'note'      => 'Note',
     'tip'       => 'Tip',
     'important' => 'Important',
     'warning'   => 'Warning',
     'caution'   => 'Caution'
   }.freeze,
-  "ja" => {
+  'ja' => {
     'note'      => 'メモ',
     'tip'       => 'ヒント',
     'important' => '重要',
@@ -43,8 +43,9 @@ module JekyllGFMAdmonitions
 
     def convert(content)
       original_content = content.dup
-      admonition = ADMONITION[(defined?(site.active_lang)) ? site.active_lang : "en"]
-#      admonition = (admonition == nil) ? ADMONITION['en'] : admonition
+#     admonition = ADMONITION[(defined?(site.active_lang)) ? site.active_lang : 'en']
+#     admonition = (admonition == nil) ? ADMONITION['en'] : admonition
+      admonition = ADMONITION['ja']
       content.gsub!(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
         t     = ::Regexp.last_match(2)
@@ -53,7 +54,6 @@ module JekyllGFMAdmonitions
         text  = ::Regexp.last_match(3)
         icon  = Octicons::Octicon.new(ADMONITION_ICONS[type]).to_svg
         admonition_html(type, title, text, icon)
-        (defined?(site.active_lang)) ? site.active_lang : "en"
       end
       if content != original_content
         css = File.read(File.expand_path('../assets/admonitions.css', __dir__))
