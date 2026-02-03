@@ -51,7 +51,7 @@ module JekyllGFMAdmonitions
     end
 
     def convert(content)
-      /<html\s*lang="([a-zA-Z\-]+)"\s*>/.match(content)
+      /html\s*lang="([a-zA-Z\-]+)"\s*/.match(content)
       admonition = ADMONITION[(Regexp.last_match(1).nil?) ? 'ja-JP' : Regexp.last_match(1)]
       original_content = content.dup
       content.gsub!(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
