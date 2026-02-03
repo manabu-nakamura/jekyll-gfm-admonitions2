@@ -51,6 +51,7 @@ module JekyllGFMAdmonitions
     end
 
     def convert(content)
+
       /<html\s*lang="([a-zA-Z\-]+)"\s*>/.matche(content)
       admonition = ADMONITION[(Regexp.last_match(1).nil?) ? 'ja-JP' : Regexp.last_match(1)]
       original_content = content.dup
