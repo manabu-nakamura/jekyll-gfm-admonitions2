@@ -3,37 +3,12 @@
 require 'octicons'
 require 'cssminify'
 
-
-
 ADMONITION = {
-  'en' => {
-    'note'      => 'Note',
-    'tip'       => 'Tip',
-    'important' => 'Important',
-    'warning'   => 'Warning',
-    'caution'   => 'Caution'
-  }.freeze,
-  'en-US' => {
-    'note'      => 'Note',
-    'tip'       => 'Tip',
-    'important' => 'Important',
-    'warning'   => 'Warning',
-    'caution'   => 'Caution'
-  }.freeze,
-  'ja' => {
-    'note'      => 'メモ',
-    'tip'       => 'ヒント',
-    'important' => '重要',
-    'warning'   => '警告',
-    'caution'   => '注意'
-  }.freeze,
-  'ja-JP' => {
-    'note'      => 'メモ',
-    'tip'       => 'ヒント',
-    'important' => '重要',
-    'warning'   => '警告',
-    'caution'   => '注意'
-  }.freeze
+  'note'      => 'メモ',
+  'tip'       => 'ヒント',
+  'important' => '重要',
+  'warning'   => '警告',
+  'caution'   => '注意'
 }.freeze
 
 ADMONITION_ICONS = {
@@ -58,15 +33,12 @@ module JekyllGFMAdmonitions
     end
 
     def convert(content)
-      /lang="([a-zA-Z\-]+)"/.match(content)
-      admonition = ADMONITION[(Regexp.last_match(1).nil?) ? 'ja' : Regexp.last_match(1)]
       original_content = content.dup
       content.gsub!(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
         t     = ::Regexp.last_match(2)
 #       title = (t.empty? || t == '<br />' || t == '</p>') ? type.capitalize  : t
-#       title = (t.empty? || t == '<br />' || t == '</p>') ? ADMONITION[type] : t
-        title = (t.empty? || t == '<br />' || t == '</p>') ? admonition[type] : t
+        title = (t.empty? || t == '<br />' || t == '</p>') ? ADMONITION[type] : t
         text  = ::Regexp.last_match(3)
         icon  = Octicons::Octicon.new(ADMONITION_ICONS[type]).to_svg
         admonition_html(type, title, text, icon)
