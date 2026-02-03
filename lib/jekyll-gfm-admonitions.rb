@@ -13,6 +13,13 @@ ADMONITION = {
     'warning'   => 'Warning',
     'caution'   => 'Caution'
   }.freeze,
+    'en-US' => {
+    'note'      => 'Note',
+    'tip'       => 'Tip',
+    'important' => 'Important',
+    'warning'   => 'Warning',
+    'caution'   => 'Caution'
+  }.freeze,
   'ja' => {
     'note'      => 'メモ',
     'tip'       => 'ヒント',
