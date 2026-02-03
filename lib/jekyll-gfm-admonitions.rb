@@ -19,8 +19,8 @@ ADMONITION = {
     'important' => '重要',
     'warning'   => '警告',
     'caution'   => '注意'
-  }.freeze
-  'jaJP' => {
+  }.freeze,
+  'ja-JP' => {
     'note'      => 'メモ',
     'tip'       => 'ヒント',
     'important' => '重要',
@@ -51,16 +51,8 @@ module JekyllGFMAdmonitions
     end
 
     def convert(content)
-      /<html\s*lang="([a-z]+)-([A-Z]+)"\s*>/.matche(content)
-      if Regexp.last_match(2).nil?
-        if Regexp.last_match(1).nil?
-          lang = 'jaJP'
-        else
-          lang = Regexp.last_match(1)
-        end
-        lang Regexp.last_match(1) + Regexp.last_match(2)
-      end
-      admonition = ADMONITION[lang]
+      /<html\s*lang="([a-zA-Z\-]+)"\s*>/.matche(content)
+      admonition = ADMONITION[(Regexp.last_match(1).nil?) ? 'ja-JP' : Regexp.last_match(1)]
       original_content = content.dup
       content.gsub!(/<blockquote>\s*<p>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\](.*?)\n(.*?)\s*<\/p>\s*<\/blockquote>/m) do
         type  = ::Regexp.last_match(1).downcase
