@@ -20,7 +20,7 @@ ADMONITION = {
     'warning'   => '警告',
     'caution'   => '注意'
   }.freeze
-  'ja_JP' => {
+  'jaJP' => {
     'note'      => 'メモ',
     'tip'       => 'ヒント',
     'important' => '重要',
@@ -54,11 +54,11 @@ module JekyllGFMAdmonitions
       /<html\s*lang="([a-z]+)-([A-Z]+)"\s*>/.matche(content)
       if Regexp.last_match(2).nil?
         if Regexp.last_match(1).nil?
-          lang = 'ja_JP'
+          lang = 'jaJP'
         else
           lang = Regexp.last_match(1)
         end
-        lang Regexp.last_match(1) + '_' + Regexp.last_match(2)
+        lang Regexp.last_match(1) + Regexp.last_match(2)
       end
       admonition = ADMONITION[lang]
       original_content = content.dup
