@@ -1,3 +1,5 @@
+https://manabu-nakamura.github.io/jekyll-gfm-admonitions2/
+
 As a test, I rewrote the [GitHub Flavored Markdown Admonitions](https://github.com/Helveg/jekyll-gfm-admonitions) plugin as a [Converter](https://jekyllrb.com/docs/plugins/converters/): [`jekyll-gfm-admonitions.rb`](https://github.com/manabu-nakamura/jekyll-gfm-admonitions2/blob/main/lib/jekyll-gfm-admonitions.rb).
 
 `Gemfile`:
